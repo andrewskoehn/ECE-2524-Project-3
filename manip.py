@@ -2,20 +2,28 @@
 #11/23/20
 #Project 3
 import sys
+import re
 
-if len(sys.argv) == 1:
+if len(sys.argv) < 4:
 	print("Usage: python manip.py <OPERATION> [PARAMETERS] <FILE>")
 	sys.exit(1)
 
 if sys.argv[1] != "-a" and sys.argv[1] != "-r" and sys.argv[1] != "-f" and sys.argv[1] != "-c" and sys.argv[1] != "-t":
 	print("Operation not recognized. Try -a, -r, -f, -c, or -t")
 	sys.exit(2)
-	
+
+test = re.search("\.", sys.argv[len(sys.argv)-1])
+if test == None:
+	print("Usage: python manip.py <OPERATION> [PARAMETERS] <FILE>")
+	sys.exit(1)
+
 try:
 	file = open(sys.argv[len(sys.argv)-1], 'r')
 except OSError:
 	print("File does not exist or cannot be opened.")
 	sys.exit(3)
+
+
 
 if sys.argv[1] == "-a":
 	if len(sys.argv) != 4:
@@ -25,12 +33,15 @@ if sys.argv[1] == "-a":
 	newText = file.read()
 	newText += sys.argv[2]
 
+
 '''
 elif sys.argv[1] == "-r":
-	if len(sys.argv) != 4:
+	if len(sys.argv) != 4 or not sys.argv[2].isnumeric():
 		print("Usage: python manip.py -r <LINE NUMBER> <FILE>")
 		sys.exit(1)
-	elif sys.argv[
+	num = int(sys.argv[2])
+	print(type(num))
+	newText = file.read()
 	lineNumber = 1
 '''
 	
