@@ -4,6 +4,7 @@
 import sys
 import re
 
+
 if len(sys.argv) < 4:
 	print("Usage: python manip.py <OPERATION> [PARAMETERS] <FILE>")
 	sys.exit(1)
@@ -29,9 +30,9 @@ if sys.argv[1] == "-a":
 	if len(sys.argv) != 4:
 		print("Usage: python manip.py -a <STRING> <FILE>")
 		sys.exit(1)
-
 	newText = file.read()
 	newText += sys.argv[2]
+
 
 
 elif sys.argv[1] == "-r":
@@ -54,6 +55,21 @@ elif sys.argv[1] == "-r":
 			newText += line
 	if not found:
 		print("File does not have that many lines.")
+		sys.exit(2)
+
+
+
+elif sys.argv[1] == "-f":
+	if len(sys.argv) != 5:
+		print("Usage: python manip.py -f <FIND> <REPLACE> <FILE>")
+		sys.exit(1)
+	find = sys.argv[2]
+	replace = sys.argv[3]
+	newText = file.read()
+	oldText = newText
+	newText = newText.replace(find, replace)
+	if newText == oldText:
+		print("No occurences of \""+find+"\" were found.")
 		sys.exit(2)
 	
 
