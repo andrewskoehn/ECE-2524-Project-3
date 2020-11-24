@@ -71,6 +71,19 @@ elif sys.argv[1] == "-f":
 	if newText == oldText:
 		print("No occurences of \""+find+"\" were found.")
 		sys.exit(2)
+		
+elif sys.argv[1] == "-c":
+	if len(sys.argv) != 4:
+		print("Usage: python manip.py -c <STRING> <FILE>")
+		sys.exit(1)
+	string = sys.argv[2]
+	newText = file.read()
+	numOccurences = newText.count(string)
+	if numOccurences == 0:
+		print("No occurences of \""+string+"\" found.")
+		sys.exit(2)
+	else:
+		print(numOccurences,"occurence(s) of \""+string+"\" found.")
 	
 
 
