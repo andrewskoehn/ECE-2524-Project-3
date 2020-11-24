@@ -34,16 +34,27 @@ if sys.argv[1] == "-a":
 	newText += sys.argv[2]
 
 
-'''
 elif sys.argv[1] == "-r":
 	if len(sys.argv) != 4 or not sys.argv[2].isnumeric():
 		print("Usage: python manip.py -r <LINE NUMBER> <FILE>")
 		sys.exit(1)
 	num = int(sys.argv[2])
-	print(type(num))
-	newText = file.read()
+	if num == 0:
+		print("<LINE NUMBER> must be > 0.")
+		sys.exit(2)
+	newText = ""
 	lineNumber = 1
-'''
+	found = False
+	for line in file:
+		if lineNumber == num:
+			found = True
+			lineNumber += 1
+		else:
+			lineNumber += 1
+			newText += line
+	if not found:
+		print("File does not have that many lines.")
+		sys.exit(2)
 	
 
 
