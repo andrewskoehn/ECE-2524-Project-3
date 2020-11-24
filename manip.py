@@ -54,7 +54,7 @@ elif sys.argv[1] == "-r":
 			lineNumber += 1
 			newText += line
 	if not found:
-		print("File does not have that many lines.")
+		print("File does not contain that many lines.")
 		sys.exit(2)
 
 
@@ -71,7 +71,9 @@ elif sys.argv[1] == "-f":
 	if newText == oldText:
 		print("No occurences of \""+find+"\" were found.")
 		sys.exit(2)
-		
+
+
+
 elif sys.argv[1] == "-c":
 	if len(sys.argv) != 4:
 		print("Usage: python manip.py -c <STRING> <FILE>")
@@ -84,6 +86,34 @@ elif sys.argv[1] == "-c":
 		sys.exit(2)
 	else:
 		print(numOccurences,"occurence(s) of \""+string+"\" found.")
+
+
+
+elif sys.argv[1] == "-t":
+	if len(sys.argv) != 6 or not sys.argv[3].isnumeric() or not sys.argv[4].isnumeric():
+		print("Usage: python manip.py -t <COMMENT> <START> <END> <FILE>")
+		sys.exit(1)
+	start = int(sys.argv[3])
+	end = int(sys.argv[4])
+	comment = sys.argv[2]
+	if start == 0:
+		print("<START> must be > 0.")
+		sys.exit(2)
+	newText = ""
+	lineNumber = 1
+	found = False
+	for line in file:
+		if lineNumber >= start and lineNumber <= end:
+			found = True
+			newText += comment+line
+			lineNumber += 1
+		else:
+			newText += line
+			lineNumber += 1
+	if not found or lineNumber < end+1:
+		print("File does not contain the given line range.")
+		sys.exit(2)
+	
 	
 
 
