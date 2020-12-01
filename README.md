@@ -42,7 +42,7 @@ OPERATIONS
 	
 	USAGE: python manip.py -t &lt;COMMENT> &lt;START> &lt;END> &lt;FILE>  
 	Example: python manip.py -t // 1 3 helloWorld.cpp  
-	Example: python manip.py -t # 5 5 test.py  
+	Example: python manip.py -t "#" 5 5 test.py  
 	
 	Note: this operation does not check for the correct commenting character, so it can also be used
 	to insert any kind of character/string at the beginning of the given lines
@@ -59,11 +59,32 @@ call to manip.py must flag and execute only one of the available operations.
 EXAMPLES
 
 If "text.txt" contains:  
-	this is a text file  
+	>>this is a text file  
 	with two lines  
 	
 then executing  
->> python manip.py -a "append" text.txt  
+python manip.py -a "append" text.txt  
 will result in "text.txt" containing:  
-	this is a text file  
+	>>this is a text file  
 	with two linesappend
+
+and then executing  
+python manip.py -r 2 text.txt  
+will result in "text.txt" containing:
+	>>this is a text file
+
+and then executing  
+python manip.py -f "text file" "textfile" text.txt  
+will result in "text.txt" containing:
+	>>this is a textfile
+	
+and then executing  
+python manip.py -c i text.txt  
+will output  
+	>>3 occurence(s) of "i" found.
+	
+and then executing  
+python manip.py -t # 2 5 text.t  
+will output  
+	>>File does not contain the given line range.
+
