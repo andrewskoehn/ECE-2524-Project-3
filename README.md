@@ -87,3 +87,9 @@ and then executing
 	>>python manip.py -t "#" 2 5 text.txt  
 will output  
 >>File does not contain the given line range.
+
+CREDIT
+
+Developed by Andrew Koehn.  
+
+END README
