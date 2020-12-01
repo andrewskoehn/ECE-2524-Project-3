@@ -84,7 +84,7 @@ will output
 >>3 occurence(s) of "i" found.
 	
 and then executing  
-	>>python manip.py -t # 2 5 text.t  
+	>>python manip.py -t # 2 5 text.txt 
 will output  
 >>File does not contain the given line range.
 
