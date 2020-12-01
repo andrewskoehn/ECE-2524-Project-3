@@ -56,4 +56,14 @@ exist in -r or -t).
 Note: the program cannot execute multiple operations in one call. In other words, each
 call to manip.py must flag and execute only one of the available operations.  
 
-OUTPUT EXAMPLES
+EXAMPLES
+
+If "text.txt" contains:  
+	this is a text file  
+	with two lines  
+	
+then executing  
+>> python manip.py -a "append" text.txt  
+will result in "text.txt" containing:  
+	this is a text file  
+	with two linesappend
