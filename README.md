@@ -36,4 +36,12 @@ OPERATIONS
 	USAGE: python manip.py -c &lt;STRING> &lt;FILE>  
 	Example: python manip.py -c for program.cpp  
 	Example: python manip.py -c "how many" words.txt
+
+- Comment (-t): comments the given lines in the given file; the line range is inclusive; user must
+	provide the appropriate commenting character for the given file type/language  
 	
+	USAGE: python manip.py -t &lt;COMMENT> &lt;START> &lt;END> &lt;FILE>  
+	Example: python manip.py -t // 1 3 helloWorld.cpp  
+	Example: python manip.py -t # 5 5 test.py  
+
+
