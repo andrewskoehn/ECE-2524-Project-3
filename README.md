@@ -24,14 +24,14 @@ OPERATIONS
 	USAGE: python manip.py -r &lt;LINE NUMBER> &lt;FILE>  
 	Example: python manip.py -r 36 test.py  
 
-- Find/Replace (-f): replaces all occurences of the given word/phrase with the new word/phrase
+- Find/Replace (-f): replaces all occurrences of the given word/phrase with the new word/phrase
 	in the given file
 	
 	USAGE: python manip.py -f &lt;FIND> &lt;REPLACE> &lt;FILE>  
 	Example: python manip.py -f hello world helloWorld.cpp  
 	Example: python manip.py -f "variable = value" "variable=value" script.sh  
 	
-- Count (-c): outputs the number of occurences of the given string in the given file  
+- Count (-c): outputs the number of occurrences of the given string in the given file  
 
 	USAGE: python manip.py -c &lt;STRING> &lt;FILE>  
 	Example: python manip.py -c for program.cpp  
@@ -50,8 +50,11 @@ OPERATIONS
 The program implements usage error checking and handling. It also implements
 file error checking and handling. When an error occurs, an appropriate message is displayed
 to the user. Also, when certain situations occur, an appropriate message is displayed
-to the user (i.e., if no occurences of a string are found in -f or -c or a given line does not
+to the user (i.e., if no occurrences of a string are found in -f or -c or a given line does not
 exist in -r or -t).  
+
+If an operation is completed successfully, no message is displayed to the user (except for -c which
+outputs the number of occurrences).  
 
 Note: the program cannot execute multiple operations in one call. In other words, each
 call to manip.py must flag and execute only one of the available operations.  
@@ -81,7 +84,7 @@ will result in "text.txt" containing:
 and then executing  
 	>>python manip.py -c i text.txt  
 will output  
->>3 occurence(s) of "i" found.
+>>3 occurrence(s) of "i" found.
 	
 and then executing  
 	>>python manip.py -t "#" 2 5 text.txt  
