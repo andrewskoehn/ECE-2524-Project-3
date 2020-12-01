@@ -19,7 +19,7 @@ OPERATIONS
 	Example: python manip.py -a while test.py  
 	Example: python manip.py -a "\nthis adds a newline" myFile.cpp  
 	
-- Remove (-r): removes the given line from the given file
+- Remove (-r): removes the given line from the given file; line number is 1-based
 	
 	USAGE: python manip.py -r &lt;LINE NUMBER> &lt;FILE>  
 	Example: python manip.py -r 36 test.py  
@@ -84,6 +84,6 @@ will output
 >>3 occurence(s) of "i" found.
 	
 and then executing  
-	>>python manip.py -t # 2 5 text.txt  
+	>>python manip.py -t "#" 2 5 text.txt  
 will output  
 >>File does not contain the given line range.
