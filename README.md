@@ -43,5 +43,17 @@ OPERATIONS
 	USAGE: python manip.py -t &lt;COMMENT> &lt;START> &lt;END> &lt;FILE>  
 	Example: python manip.py -t // 1 3 helloWorld.cpp  
 	Example: python manip.py -t # 5 5 test.py  
+	
+	Note: this operation does not check for the correct commenting character, so it can also be used
+	to insert any kind of character/string at the beginning of the given lines
 
+The program implements usage error checking and handling. It also implements
+file error checking and handling. When an error occurs, an appropriate message is displayed
+to the user. Also, when certain situations occur, an appropriate message is displayed
+to the user (i.e., if no occurences of a string are found in -f or -c or a given line does not
+exist in -r or -t).  
 
+Note: the program cannot execute multiple operations in one call. In other words, each
+call to manip.py must flag and execute only one of the available operations.  
+
+OUTPUT EXAMPLES
