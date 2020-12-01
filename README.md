@@ -14,7 +14,7 @@ OPERATIONS
 
 - Append (-a): appends the given string to the end of the given file (does not insert
 	a newline character)
-	  
+	
 	USAGE: python manip.py -a &lt;STRING> &lt;FILE>  
 	Example: python manip.py -a while test.py  
 	Example: python manip.py -a "\nthis adds a newline" myFile.cpp  
@@ -23,3 +23,10 @@ OPERATIONS
 	
 	USAGE: python manip.py -r &lt;LINE NUMBER> &lt;FILE>  
 	Example: python manip.py -r 36 test.py  
+
+- Find/Replace (-f): replaces all occurences of the given word/phrase with the new word/phrase
+	in the given file
+	
+	USAGE: python manip.py -f &lt;FIND> &lt;REPLACE> &lt;FILE>  
+	Example: python manip.py -f hello world helloWorld.cpp  
+	Example: python manip.py -f "variable = value" "variable=value" script.sh  
