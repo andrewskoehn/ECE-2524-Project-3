@@ -65,8 +65,8 @@ If "text.txt" contains:
 then executing  
 python manip.py -a "append" text.txt  
 will result in "text.txt" containing:  
-	>>this is a text file  
-	with two linesappend
+>>this is a text file  
+with two linesappend
 
 and then executing  
 python manip.py -r 2 text.txt  
