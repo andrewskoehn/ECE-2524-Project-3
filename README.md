@@ -14,7 +14,12 @@ OPERATIONS
 
 - Append (-a): appends the given string to the end of the given file (does not insert
 	a newline character)
+	  
+	USAGE: python manip.py -a &lt;STRING> &lt;FILE>  
+	Example: python manip.py -a while test.py  
+	Example: python manip.py -a "\nthis adds a newline" myFile.cpp  
 	
-	USAGE: python manip.py -a &lt;STRING> &lt;FILE>
-	Example: python manip.py -a while test.py
-	Example: python manip.py -a "\nthis adds a newline" myFile.cpp
+- Remove (-r): removes the given line from the given file
+	
+	USAGE: python manip.py -r &lt;LINE NUMBER> &lt;FILE>  
+	Example: python manip.py -r 36 test.py  
