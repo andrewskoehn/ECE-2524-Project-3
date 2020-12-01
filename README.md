@@ -30,3 +30,10 @@ OPERATIONS
 	USAGE: python manip.py -f &lt;FIND> &lt;REPLACE> &lt;FILE>  
 	Example: python manip.py -f hello world helloWorld.cpp  
 	Example: python manip.py -f "variable = value" "variable=value" script.sh  
+	
+- Count (-c): outputs the number of occurences of the given string in the given file  
+
+	USAGE: python manip.py -c &lt;STRING> &lt;FILE>  
+	Example: python manip.py -c for program.cpp  
+	Example: python manip.py -c "how many" words.txt
+	
